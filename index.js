@@ -119,9 +119,9 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-	res.send('Running Dreamland server');
+	res.send('Running FitnessCloud server');
 })
 
 app.listen(port, () => {
-	console.log('Listening Dreamland server on port', port);
+	console.log('Listening FitnessCloud server on port', port);
 })
