@@ -20,13 +20,13 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run(){
     try{
         await client.connect();
-        const database = client.db("dreamland");
+        const database = client.db("FitnessCloud");
+        const usersCollection = database.collection("users");
         const propertiesCollection = database.collection("properties");
         const purchaseCollection = database.collection("purchase");
-        const usersCollection = database.collection("users");
         const reviewCollection = database.collection("review");
 
-        //GET API
+        // GET API
         app.get('/properties', async (req, res) => {
             const cursor = propertiesCollection.find({});
             const properties = await cursor.toArray();
